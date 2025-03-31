@@ -1,5 +1,5 @@
 //This class is made to test how tokenizing works.
-// 31st March 2025 Update - the idea of storing arrys in arrays has been removed. It will now focus on creating a singular array.
+// 31st March 2025 Update 2 - add the different types of data types tokenising (this update specifically includes integers.)
 import java.util.Scanner;
 
 public class TokenA
@@ -42,6 +42,29 @@ public class TokenA
 			for(int i=0;i<arrayString.length;i++)
 			{
 				System.out.println(arrayString[i]);
+			}
+		}
+		else if(sentence.equals("int")||sentence.equals("integer"))
+		{
+			int[] arrayInteger = new int[times];
+			System.out.println("Enter your integers:");
+			String integerS = scanner.nextLine();
+			Scanner scannerInteger= new Scanner(integerS).useDelimiter(delimiter);
+			boolean hasNext = scannerInteger.hasNext();
+
+			for(int i =0; i<arrayInteger.length && hasNext; i++)
+			{
+				arrayInteger[i] = scannerInteger.nextInt();
+		
+			}
+			
+	
+				
+			System.out.println("Working.");
+			System.out.println("Below is a representation of your array");
+			for(int i=0;i<arrayInteger.length;i++)
+			{
+				System.out.println(arrayInteger[i]);
 			}
 		}
 
