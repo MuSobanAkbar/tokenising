@@ -1,5 +1,5 @@
 //This class is made to test how tokenizing works.
-// 31st March 2025 Update 2 - add the different types of data types tokenising (this update specifically includes integers.)
+// 31st March 2025 Update 3 - allows user to see the represenation of the array that has stored their values.
 import java.util.Scanner;
 
 public class TokenA
@@ -20,7 +20,6 @@ public class TokenA
 			System.out.println("What would you want your delimiter to be?: ");
 			delimiter = scanner.nextLine();
 		}
-
 		if(sentence.equals("string"))
 		{
 			String[] arrayString = new String[times];
@@ -35,14 +34,27 @@ public class TokenA
 		
 			}
 			
-	
+			System.out.println("What would you like the format of your array to look like (array/list)?: ");
+			String formatA = scanner.nextLine().toLowerCase();
 				
-			System.out.println("Working.");
-			System.out.println("Below is a representation of your array");
-			for(int i=0;i<arrayString.length;i++)
+			if(formatA.equals("array"))
 			{
-				System.out.println(arrayString[i]);
+				System.out.print("[");
+				for(int i=0;i<arrayString.length;i++)
+				{
+					System.out.print(arrayString[i] +"|");
+				}
+				System.out.print("]");
+
 			}
+			else
+			{
+				for(int i=0;i<arrayString.length;i++)
+				{
+					System.out.println(arrayString[i]);
+				}
+			}
+
 		}
 		else if(sentence.equals("int")||sentence.equals("integer"))
 		{
@@ -57,15 +69,28 @@ public class TokenA
 				arrayInteger[i] = scannerInteger.nextInt();
 		
 			}
-			
+			System.out.println("What would you like the format of your array to look like (array/list)?: ");
+			String formatA = scanner.nextLine().toLowerCase();
+				
+			if(formatA.equals("array"))
+			{
+				System.out.print("[|");
+				for(int i=0;i<arrayInteger.length;i++)
+				{
+					System.out.print(arrayInteger[i] +"|");
+				}
+				System.out.print("]");
+
+			}
+			else
+			{
+				for(int i=0;i<arrayInteger.length;i++)
+				{
+					System.out.println(arrayInteger[i]);
+				}
+			}
 	
 				
-			System.out.println("Working.");
-			System.out.println("Below is a representation of your array");
-			for(int i=0;i<arrayInteger.length;i++)
-			{
-				System.out.println(arrayInteger[i]);
-			}
 		}
 
 	}
